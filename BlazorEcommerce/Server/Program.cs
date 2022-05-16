@@ -2,6 +2,7 @@ global using BlazorEcommerce.Shared;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore;
 global using BlazorEcommerce.Server.Data;
+global using BlazorEcommerce.Server.Services;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,10 @@ builder.Services.AddRazorPages();
 // Add Swagger Services (step 1)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Register Dependency Injection
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
