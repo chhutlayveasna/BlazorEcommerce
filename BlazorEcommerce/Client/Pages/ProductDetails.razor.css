@@ -11,7 +11,11 @@
     text-align: center;
 }
 
-@media (max-width: 1023.98) {
+@media (max-width: 1023.98px) {
+    .media {
+        flex-direction: column;
+    }
+
     .media-img {
         max-width: 300px;
     }
